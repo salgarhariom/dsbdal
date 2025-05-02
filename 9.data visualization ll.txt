@@ -1,0 +1,13 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = sns.load_dataset('titanic')
+sns.boxplot(x='sex', y='age', hue='survived', data=df)
+plt.show()
+
+
+Q1: What is a boxplot?
+Ans: A boxplot shows the spread of data using quartiles and highlights outliers.
+
+Q2: What insights can be gained from boxplots?
+Ans: It shows median, range, and if there are any outliers or skewness in the data.

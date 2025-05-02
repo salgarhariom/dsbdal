@@ -1,0 +1,26 @@
+import pandas as pd
+
+df = pd.read_csv("data.csv")
+print(df.head())
+
+print(df.isnull().sum())
+print(df.describe())
+print(df.dtypes)
+print(df.shape)
+
+# Convert object to category if needed
+df['CategoryColumn'] = df['CategoryColumn'].astype('category')
+
+# Label encode categorical columns
+df['CategoryColumn'] = df['CategoryColumn'].cat.codes
+print(df.dtypes)
+
+
+Q1: What is data wrangling?
+Ans: Data wrangling is the process of cleaning, organizing, and transforming raw data into a usable format.
+
+Q2: Why is missing value treatment important?
+Ans: Missing values can affect the accuracy of the model. So, we either remove or fill them using mean, median, or other methods.
+
+Q3: What is data normalization?
+Ans: Normalization scales numerical values into a specific range, usually 0 to 1, to help models work better.

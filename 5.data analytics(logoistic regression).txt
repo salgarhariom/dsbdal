@@ -1,0 +1,26 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score
+
+df = pd.read_csv("Social_Network_Ads.csv")
+x = df[['Age', 'EstimatedSalary']]
+y = df['Purchased']
+
+xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size=0.25)
+model = LogisticRegression()
+model.fit(xtrain, ytrain)
+ypred = model.predict(xtest)
+
+cm = confusion_matrix(ytest, ypred)
+print("Confusion Matrix:\n", cm)
+print("Accuracy:", accuracy_score(ytest, ypred))
+print("Precision:", precision_score(ytest, ypred))
+print("Recall:", recall_score(ytest, ypred))
+
+
+Q1: What is logistic regression?
+Ans: Logistic regression is used for binary classification problems like yes/no or 0/1 outcomes.
+
+Q2: What is a confusion matrix?
+Ans: It is a table used to evaluate classification models using TP, FP, TN, FN.

@@ -1,0 +1,30 @@
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('averaged_perceptron_tagger')
+from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer, WordNetLemmatizer
+
+text = "Tokenization splits text into words or sentences."
+print(word_tokenize(text))
+
+filtered = [w for w in word_tokenize(text.lower()) if w not in stopwords.words("english")]
+print(filtered)
+
+ps = PorterStemmer()
+print([ps.stem(w) for w in filtered])
+
+lemm = WordNetLemmatizer()
+print([lemm.lemmatize(w) for w in filtered])
+
+
+Q1: What is tokenization?
+Ans: Tokenization splits text into smaller parts like words or sentences.
+
+Q2: What is stemming and lemmatization?
+Ans: Stemming cuts words to their root (e.g., “playing” → “play”), while lemmatization gives meaningful root word (e.g., “better” → “good”).
+
+Q3: What is TF-IDF?
+Ans: TF-IDF is a numerical value that shows how important a word is in a document relative to a set of documents.

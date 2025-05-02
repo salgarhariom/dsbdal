@@ -1,0 +1,20 @@
+import pandas as pd
+df = pd.read_csv("iris.csv")
+
+# Summary statistics by species
+print(df.groupby('species')['sepal_length'].describe())
+
+# Percentiles for each species
+for spec in df['species'].unique():
+    print("\n", spec)
+    print(df[df['species']==spec].describe())
+
+
+Q1: What are measures of central tendency?
+Ans: Mean, median, and mode are measures that describe the center of a dataset.
+
+Q2: What is standard deviation?
+Ans: It shows how spread out the values are from the mean. A low value means the data is close to the mean.
+
+Q3: What is grouping in statistics?
+Ans: Grouping means summarizing numerical data based on a category, like average income by age group.

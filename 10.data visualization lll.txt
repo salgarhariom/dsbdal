@@ -1,0 +1,23 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("iris.csv")
+print(df.dtypes)
+
+for col in df.columns[:-1]:
+    plt.figure()
+    sns.histplot(df[col], kde=True)
+    plt.title(f"Histogram of {col}")
+
+for col in df.columns[:-1]:
+    plt.figure()
+    sns.boxplot(y=df[col])
+    plt.title(f"Boxplot of {col}")
+
+
+Q1: Why do we use histograms and boxplots in EDA?
+Ans: Histograms show data distribution; boxplots detect outliers and spread of data.
+
+Q2: How do we identify outliers?
+Ans: Outliers are values beyond the whiskers in a boxplot or outside the IQR range

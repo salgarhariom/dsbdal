@@ -1,0 +1,13 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = sns.load_dataset('titanic')
+sns.histplot(df['fare'])
+plt.show()
+
+
+Q1: What is data visualization?
+Ans: It is the graphical representation of data using charts and plots to find hidden patterns.
+
+Q2: What is a histogram?
+Ans: Histogram shows the frequency of values using bars. It helps understand data distribution.
